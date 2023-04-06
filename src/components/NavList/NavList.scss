@@ -1,0 +1,200 @@
+@import "../../main.scss";
+
+.nav-list-div {
+	.not-user-nav-list,
+	.user-nav-list,
+	.admin-nav-list {
+		display: flex;
+		align-items: stretch;
+		gap: 10px;
+		li:not(.user-profile) {
+			border: var(--border);
+			border-radius: 3px;
+			padding: var(--padding);
+			transition: all 0.3s;
+			@include tablet {
+				padding: 5px;
+			}
+			&:hover {
+				border-color: var(--secondColor);
+			}
+
+			&:has(a.active) {
+				a {
+					color: var(--secondColor);
+					font-weight: bold;
+				}
+				.cart-length {
+					color: var(--mainTextColor);
+				}
+			}
+			a {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 4px;
+
+				svg {
+					font-size: larger;
+				}
+				.cart-length {
+					background-color: var(--secondColor) !important;
+					width: 25px;
+					height: 25px;
+					border-radius: 50%;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+			}
+		}
+		.language {
+			align-self: stretch;
+			cursor: pointer;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			svg {
+				font-size: 20px;
+			}
+		}
+		.links {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+
+			.links-lists {
+				&.hide {
+					@include mobile {
+						transform: scale(0);
+					}
+				}
+				transition: all 0.3s;
+				transform: scale(1);
+				display: flex;
+				align-items: center;
+				gap: 10px;
+
+				@include mobile {
+					position: absolute;
+					flex-direction: column;
+					width: 50%;
+					min-width: 250px;
+					top: calc(var(--headerHeight));
+					right: 10px;
+					padding: 10px;
+					border-radius: 10px;
+					background-color: var(--boxBG);
+					box-shadow: var(--boxShadowStrong);
+					li {
+						width: 100%;
+						z-index: 10;
+						a {
+							color: var(--secondTextColor);
+						}
+						&:hover:not(.logout-li) {
+							background-color: var(--hoverBG);
+						}
+					}
+					.language {
+						color: var(--secondTextColor);
+					}
+				}
+			}
+
+			.toggle-menu {
+				background-color: transparent;
+				color: var(--mainTextColor);
+				display: none;
+				transition: all 0.3s;
+				cursor: pointer;
+				@include mobile {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					font-size: 39px;
+				}
+			}
+		}
+	}
+
+	.user-profile {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		img {
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			object-fit: cover;
+			cursor: pointer;
+			@include mobile {
+				width: 35px;
+				height: 35px;
+			}
+		}
+		.menu {
+			&.show {
+				transform: scale(1);
+			}
+			transform: scale(0);
+			transition: all 0.3s;
+			padding: 10px;
+			z-index: 20;
+			position: absolute;
+			top: calc(var(--headerHeight) + 10px);
+			background: var(--boxBG);
+			box-shadow: var(--boxShadowStrong);
+			color: var(--secondTextColor);
+			border-radius: 10px;
+			width: 250px;
+			p {
+				&.logout-p {
+					display: flex;
+					gap: 10px;
+					align-items: center;
+				}
+				cursor: pointer;
+				padding: 5px;
+				transition: all 0.1s;
+				&:hover {
+					background: var(--mainLightBG);
+				}
+				a {
+					display: flex;
+					gap: 10px;
+					align-items: center;
+				}
+			}
+		}
+	}
+
+	.admin-nav-list {
+		.logout-li {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 4px;
+			cursor: pointer;
+			padding: 0;
+			@include mobile {
+				border: none !important;
+				position: relative;
+				// bottom: 3px;
+				font-size: 40px;
+				padding: 0 !important;
+			}
+		}
+		.toggle-menu {
+			font-size: 40px !important;
+		}
+	}
+
+	.not-user-nav-list {
+		p {
+			@include mobile {
+				display: none;
+			}
+		}
+	}
+}

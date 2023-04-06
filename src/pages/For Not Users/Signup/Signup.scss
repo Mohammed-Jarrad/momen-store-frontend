@@ -1,0 +1,74 @@
+@import "../../../main.scss";
+
+.signup-page {
+	.container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+
+		.signup-box {
+			padding: 20px;
+			background-color: var(--boxBG);
+			box-shadow: var(--boxShadowStrong);
+			border-radius: 10px;
+			display: flex;
+			flex-direction: column;
+			gap: 30px;
+			> span {
+				font-size: 13px;
+				text-align: center;
+				a {
+					text-decoration: underline;
+					margin-right: 5px;
+				}
+			}
+			form {
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
+				label {
+					display: flex;
+					gap: 10px;
+					@include mobile {
+						gap: 0px;
+					}
+					input {
+						@include mobile {
+							width: 200px;
+						}
+					}
+					span {
+						width: 115px;
+						@include mobile {
+							font-size: 12px;
+							width: 90px;
+						}
+					}
+					&.pass {
+						position: relative;
+						.eyes {
+							display: flex;
+							position: absolute;
+							top: 50%;
+							left: 10px;
+							transform: translateY(-50%);
+							cursor: pointer;
+						}
+					}
+				}
+
+				button.submit {
+					border-radius: 10px;
+					width: 100%;
+					background-color: var(--secondColor);
+					color: var(--mainTextColor);
+					font-size: 20px;
+					text-transform: uppercase;
+					font-weight: bold;
+					margin-top: 20px;
+				}
+			}
+		}
+	}
+}

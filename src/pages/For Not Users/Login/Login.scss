@@ -1,0 +1,78 @@
+@import "../../../main.scss";
+
+.login-page {
+	.container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+
+		.login-box {
+			padding: 10px;
+			background-color: var(--boxBG);
+			box-shadow: var(--boxShadowStrong);
+			border-radius: 10px;
+			display: flex;
+			flex-direction: column;
+			gap: 40px;
+
+			> span {
+				font-size: 13px;
+				text-align: center;
+				a {
+					text-decoration: underline;
+					margin-right: 5px;
+				}
+			}
+
+			form {
+				display: flex;
+				flex-direction: column;
+				gap: 20px;
+				.inputs {
+					display: flex;
+					flex-direction: column;
+					gap: 5px;
+					.input-box {
+						position: relative;
+						border: var(--border);
+						border-radius: 10px;
+						padding: 5px;
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+						input {
+							border: none;
+						}
+						> svg {
+							width: 15px;
+							color: var(--secondColor);
+							font-size: 20px;
+						}
+						.eyes {
+							position: absolute;
+							top: 50%;
+							left: 10px;
+							transform: translateY(-50%);
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							padding: 5px;
+							cursor: pointer;
+						}
+					}
+				}
+
+				button.submit {
+					border-radius: 10px;
+					width: 100%;
+					background-color: var(--secondColor);
+					color: var(--mainTextColor);
+					font-size: 20px;
+					text-transform: uppercase;
+					font-weight: bold;
+				}
+			}
+		}
+	}
+}

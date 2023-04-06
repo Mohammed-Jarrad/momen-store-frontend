@@ -1,0 +1,43 @@
+@import "../../main.scss";
+
+header.header {
+	// background: var(--mainColor);
+	// padding: 5px 0 0;
+	// @include mobile {
+	// 	padding: 5px 5px 0;
+	// }
+	color: var(--mainTextColor);
+	height: var(--headerHeight);
+	@include mobile {
+		--headerHeight: 60px;
+		padding: 5px 0 0;
+		.container {
+			width: 98% !important;
+			border-radius: 10px;
+			padding: 10px !important;
+		}
+	}
+	position: fixed;
+	top: 0;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	z-index: 10;
+	.container {
+		width: 100%;
+		padding: 0 10px;
+
+		// overflow: hidden;
+		background: var(--mainColor);
+		position: relative;
+		height: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		img.logo {
+			width: 165px;
+			cursor: pointer;
+		}
+	}
+}

@@ -1,0 +1,125 @@
+@import "./main.scss";
+
+.layout {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+
+	.main-layout {
+		flex: 1;
+		margin-top: var(--headerHeight);
+		min-height: calc(100vh - var(--headerHeight));
+		display: inline-flex;
+		align-items: stretch;
+		> div {
+			width: 100%;
+		}
+	}
+}
+
+// basic configration
+
+.container {
+	margin-right: auto;
+	margin-left: auto;
+	@include mobile {
+		padding-right: 10px;
+		padding-left: 10px;
+		width: 100%;
+	}
+	@include tablet {
+		width: 750px;
+	}
+	@include desktop {
+		width: 970px;
+	}
+	@include largeDesktop {
+		width: 1170px;
+	}
+}
+
+ul {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+button {
+	cursor: pointer;
+	outline: none;
+	border: none;
+}
+
+input,
+textarea {
+	caret-color: var(--secondColor);
+	border-radius: 5px;
+	border-color: var(--mainColor);
+	outline: none;
+	padding: 2px 5px;
+	border: var(--border);
+	transition: border-color 0.5s;
+	&:focus {
+		outline: none;
+		border-color: var(--mainColor);
+	}
+}
+
+// ! errors
+.errors {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	border: var(--border);
+	> div {
+		padding: 0;
+		font-size: 10px;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+}
+
+// ! custome style modals
+.modal {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	max-width: 90%;
+	max-height: 90%;
+	margin-top: 20px;
+	transition: all 0.4s;
+	background-color: var(--bodyBG);
+	border-radius: 10px;
+	overflow: auto;
+	transition: all 0.4s ease-in-out;
+	opacity: 0;
+	box-shadow: var(--boxShadowStrong);
+}
+
+.modal:focus {
+	outline: none;
+}
+
+.modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: rgb(222 222 222 / 75%);
+	z-index: 11111;
+	transition: all 0.5s ease-in-out;
+}
+
+.ReactModal__Content--after-open {
+	opacity: 1;
+}
+
+.ReactModal__Content--before-close {
+	opacity: 0;
+}

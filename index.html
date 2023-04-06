@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="online market" />
+		<meta name="description" content="momen store" />
+
+		<link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+		<meta name="theme-color" content="#00a28a" />
+
+		<link rel="icon" type="image/svg+xml" href="/assets/icon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Momen Store</title>
+	</head>
+	<body>
+		<div id="root"></div>
+		<script>
+			if ("serviceWorker" in navigator) {
+				window.addEventListener("load", () => {
+					navigator.serviceWorker
+						.register("/sw.js")
+						.then(registration => {
+							console.log("Service worker registered:", registration)
+						})
+						.catch(error => {
+							console.log("Service worker registration failed:", error)
+						})
+				})
+			}
+		</script>
+		<script type="module" src="/src/main.jsx"></script>
+	</body>
+</html>

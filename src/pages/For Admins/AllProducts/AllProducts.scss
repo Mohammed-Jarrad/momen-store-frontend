@@ -1,0 +1,65 @@
+@import "../../../main.scss";
+
+.all-products {
+	padding: 20px;
+	@include mobile {
+		padding: 5px;
+	}
+
+	.all-products-box {
+		background-color: var(--boxBG);
+		box-shadow: var(--boxShadow);
+		border-radius: 10px;
+		padding: 20px;
+		height: 100%;
+
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 20px;
+
+		@include smallMobile {
+			grid-template-columns: repeat(1, 1fr);
+			gap: 5px;
+			padding: 20px 5px;
+		}
+		@include mobile {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 5px;
+			padding: 20px 5px;
+		}
+		@include tablet {
+			grid-template-columns: repeat(3, 1fr);
+		}
+		.product-box {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+			.options {
+				display: flex;
+				align-items: stretch;
+				gap: 5px;
+				.delete,
+				.edit {
+					padding: 5px;
+					color: var(--mainTextColor);
+					border-radius: 5px;
+					text-align: center;
+					flex: 1;
+				}
+				.delete {
+					background-color: var(--boxBG);
+					color: var(--secondTextColor);
+					border: 1px solid var(--discountColor);
+					&:hover {
+						background-color: var(--discountColor);
+						color: var(--mainTextColor);
+						transition: all 0.2s;
+					}
+				}
+				.edit {
+					background-color: var(--acceptColor);
+				}
+			}
+		}
+	}
+}

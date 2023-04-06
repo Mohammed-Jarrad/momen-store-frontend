@@ -1,0 +1,18 @@
+// stars
+
+ul.stars {
+	// margin-top: 5px;
+	list-style: none;
+	display: flex;
+	align-items: center;
+	gap: 2px;
+	li {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	svg {
+		color: #ebb450;
+		font-size: 17px;
+	}
+}

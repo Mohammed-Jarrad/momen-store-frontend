@@ -1,0 +1,56 @@
+@import "../../../main.scss";
+
+.all-users {
+	padding: 20px;
+	@include mobile {
+		padding: 5px;
+	}
+
+	.users-box {
+		background-color: var(--boxBG);
+		box-shadow: var(--boxShadow);
+		border-radius: 10px;
+		padding: 20px;
+		// height: 100%;
+
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		@include mobile {
+			grid-template-columns: repeat(1, 1fr);
+		}
+		@include smallMobile {
+			grid-template-columns: repeat(1, 1fr);
+		}
+		@include tablet {
+			grid-template-columns: repeat(3, 1fr);
+		}
+		gap: 10px;
+
+		.user-box {
+			background-color: var(--bodyBG);
+			padding: 10px;
+			border-radius: 10px;
+			border: var(--border);
+
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			font-size: small;
+
+			img {
+				width: 60px;
+				height: 60px;
+				border-radius: 50%;
+				margin-bottom: 20px;
+			}
+
+			.delete {
+				background-color: var(--secondColor);
+				color: var(--mainTextColor);
+				padding: 5px;
+				border-radius: 5px;
+				margin-top: 20px;
+			}
+		}
+	}
+}

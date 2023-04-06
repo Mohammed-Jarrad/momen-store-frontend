@@ -1,0 +1,22 @@
+.error-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+    gap: 30px;
+    padding: 20px;
+    
+    img {
+      width: 60%;
+       border-radius: 20px;
+       box-shadow: var(--boxShadowStrong);
+    }
+
+    a {
+        background-color: var(--secondColor);
+        color: var(--mainTextColor);
+        padding: 10px;
+        border-radius: 10px;
+    }
+    
+}

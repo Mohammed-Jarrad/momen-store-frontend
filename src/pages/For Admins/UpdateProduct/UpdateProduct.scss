@@ -1,0 +1,249 @@
+@import "../../../main.scss";
+
+.update-product {
+
+    padding: 50px;
+	@include mobile {
+		padding: 5px;
+	}
+    .edit-box {
+		background-color: var(--boxBG);
+		box-shadow: var(--boxShadow);
+		border-radius: 10px;
+		padding: 10px;
+		height: 100%;
+
+		display: flex;
+		align-items: stretch;
+		gap: 20px;
+
+		@include mobile {
+			flex-direction: column-reverse;
+			gap: 20px;
+		}
+
+		.form {
+			flex: 2;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 20px;
+			@include mobile {
+			}
+			.input-box {
+				width: 100%;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				gap: 20px;
+
+				@include mobile {
+					flex-direction: column;
+					align-items: flex-start;
+					gap: 5px;
+					input,
+					textarea {
+						width: 100%;
+					}
+				}
+
+				span {
+					flex: 1;
+					@include mobile {
+						font-size: 13px;
+						font-weight: bold;
+					}
+				}
+				textarea {
+					height: 150px;
+					resize: vertical;
+				}
+				textarea,
+				input {
+					flex: 3;
+				}
+			}
+
+			.errors {
+				width: 100%;
+				border-radius: 5px;
+			}
+
+			.sizes {
+				width: 100%;
+				display: flex;
+				align-items: center;
+				gap: 20px;
+				@include mobile {
+					flex-direction: column;
+					align-items: flex-start;
+					.label {
+						font-size: 13px;
+						font-weight: bold;
+					}
+					.content {
+						width: 100%;
+						form {
+							flex-direction: column;
+						}
+					}
+				}
+				.label {
+					flex: 1;
+				}
+
+				.content {
+					display: flex;
+					flex-direction: column;
+					gap: 5px;
+					flex: 3;
+
+					.selected-sizes-view {
+						display: flex;
+						align-items: center;
+						gap: 5px;
+						flex-wrap: wrap;
+						border: var(--border);
+						border-radius: 5px;
+						padding: 5px;
+						background-color: var(--bodyBG);
+
+						.selected-item {
+							border: var(--border);
+							border-radius: 5px;
+							background-color: var(--boxBG);
+							padding: 0 5px;
+							display: flex;
+							align-items: center;
+							gap: 5px;
+							color: var(--secondTextColor);
+
+							svg {
+								color: var(--secondColor);
+								cursor: pointer;
+							}
+						}
+					}
+
+					form {
+						width: 100%;
+						display: flex;
+						align-items: stretch;
+						gap: 5px;
+						input {
+							flex: 4;
+						}
+						button {
+							flex: 1;
+						}
+					}
+				}
+			}
+
+			.colors {
+				width: 100%;
+				display: flex;
+				align-items: center;
+				gap: 20px;
+				@include mobile {
+					flex-direction: column;
+					align-items: flex-start;
+					.label {
+						font-size: 13px;
+						font-weight: bold;
+					}
+				}
+				.label {
+					flex: 1;
+				}
+				.content {
+					width: 100%;
+					flex: 3;
+					display: flex;
+					flex-direction: column;
+					gap: 10px;
+					form {
+						display: flex;
+						align-items: center;
+						justify-content: space-between;
+						gap: 10px;
+						input {
+							// width: 60px;
+							flex: 3;
+							height: 40px;
+							// height: 60px;
+							// border-radius: 50%;
+							// padding: 10px;
+						}
+						button {
+							// flex-basis: 30%;
+							flex: 1;
+						}
+					}
+
+					.selected-colors-view {
+						border: var(--border);
+						padding: 5px;
+						border-radius: 10px;
+						display: flex;
+						align-items: center;
+						gap: 5px;
+						flex-wrap: wrap;
+						.selected-item {
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							border-radius: 5px;
+							border: var(--border);
+							svg {
+								font-size: 20px;
+								cursor: pointer;
+							}
+						}
+					}
+				}
+			}
+
+			.available-controller {
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				span {
+					flex: 1;
+				}
+				.content {
+					flex: 3;
+				}
+			}
+			
+			button {
+				color: var(--mainTextColor);
+				background-color: var(--secondColor);
+				padding: 5px;
+				border-radius: 5px;
+				width: 100%;
+			}
+			> button.edit {
+ 				background-color: var(--mainColor);
+ 			}
+		}
+
+		.image-view {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+			justify-content: center;
+			align-items: center;
+			img {
+				width: 200px;
+				height: 200px;
+				border-radius: 50%;
+				object-fit: contain;
+				border: var(--border);
+				box-shadow: var(--boxShadow);
+			}
+		}
+	}
+}

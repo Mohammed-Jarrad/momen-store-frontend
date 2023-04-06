@@ -1,0 +1,30 @@
+@import "../../../main.scss";
+
+.category-page {
+	.container {
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		.title {
+			border: var(--border);
+			border-color: var(--mainColor);
+			border-radius: 10px;
+			padding: 5px;
+			text-align: center;
+			color: var(--secondTextColor);
+		}
+
+		.category-products {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+			gap: 10px;
+			@include mobile {
+				grid-template-columns: repeat(2, 1fr);
+			}
+			.product {
+				// padding: 5px;
+			}
+		}
+	}
+}

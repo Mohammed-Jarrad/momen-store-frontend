@@ -1,0 +1,20 @@
+.go-top {
+	position: fixed;
+	bottom: 10px;
+	left: 10px;
+	z-index: 1111111;
+}
+.go-top svg {
+	font-size: 40px;
+	color: var(--secondColor);
+	cursor: pointer;
+	animation: go-up-down 0.8s infinite ease-in;
+}
+@keyframes go-up-down {
+	from {
+		transform: translateY(-2px);
+	}
+	to {
+		transform: translateY(2px);
+	}
+}

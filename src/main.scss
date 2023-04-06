@@ -1,0 +1,70 @@
+@import url(https://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@100;200;300;400;500&display=swap");
+
+:root {
+	--mainColor: #00a28a;
+	--secondColor: #f6b60d;
+	--discountColor: #d23f57;
+	--acceptColor: #0fad29;
+	--mainTextColor: #f3f3f3;
+	--secondTextColor: #373f50;
+	--bodyBG: #fff;
+	--boxBG: #f6f9f9;
+	--hoverBG: #ebedec;
+	--mainLightBG: #b8d8e088;
+	--secondLightBG: rgb(252, 233, 236);
+	--boxShadow: 0px 1px 5px rgb(3 0 71 / 9%);
+	--boxShadowStrong: 0px 5px 5px rgb(3 0 71/ 15%);
+	--boxesBorder: 1px solid transparent;
+	--border: 1px solid #dddddd;
+	--padding: 10px;
+	--textColorLight: #7d879c;
+	--model-overlay-bg: rgba(61, 61, 61, 0.7);
+	--headerHeight: 70px;
+}
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: "Droid Arabic Kufi", "Noto Sans Hebrew", sans-serif;
+	scroll-behavior: smooth;
+}
+
+body {
+	direction: rtl;
+	background-color: var(--bodyBG);
+}
+
+// * responsive configrations
+
+@mixin smallMobile {
+	@media (min-width: 100px) and (max-width: 300px) {
+		@content;
+	}
+}
+@mixin mobile {
+	@media (min-width: 300px) and (max-width: 768px) {
+		@content;
+	}
+}
+@mixin tablet {
+	@media (min-width: 768px) and (max-width: 991px) {
+		@content;
+	}
+}
+@mixin desktop {
+	@media (min-width: 992px) and (max-width: 1199px) {
+		@content;
+	}
+}
+@mixin largeDesktop {
+	@media (min-width: 1200px) {
+		@content;
+	}
+}
+@mixin not-mobile {
+	@media (min-width: 768px) {
+		@content;
+	}
+}

@@ -1,0 +1,198 @@
+@import "../../../main.scss";
+
+.profile-page {
+	padding: 20px;
+	@include mobile {
+		padding: 5px;
+	}
+
+	.profile-box {
+		background-color: var(--boxBG);
+		height: 100%;
+		box-shadow: var(--boxShadow);
+		border-radius: 10px;
+		padding: 50px;
+
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+
+		.title {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			flex-wrap: wrap;
+			img {
+				width: 50px;
+				height: 50px;
+				border-radius: 10px;
+			}
+			h1 {
+				color: var(--secondTextColor);
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				overflow: hidden;
+				max-width: 450px;
+			}
+			button {
+				background-color: var(--mainColor);
+				color: var(--mainTextColor);
+				border-radius: 5px;
+				padding: 5px;
+				font-size: 13px;
+				cursor: pointer;
+				&.change-pass {
+					background-color: var(--secondColor);
+				}
+			}
+			@include mobile {
+				flex-direction: column;
+			}
+		}
+
+		.infos {
+			display: grid;
+			gap: 10px;
+			grid-template-columns: repeat(1, 1fr);
+			@include tablet {
+				grid-template-columns: repeat(2, 1fr);
+			}
+			@include largeDesktop {
+				grid-template-columns: repeat(3, 1fr);
+			}
+			@include desktop {
+				grid-template-columns: repeat(2, 1fr);
+			}
+			.info-box {
+				border: 1px solid #efefef;
+				padding: 10px;
+				background-color: var(--bodyBG);
+				box-shadow: var(--boxShadow);
+				border-radius: 10px;
+				color: var(--secondTextColor);
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
+				.label {
+					font-size: 17px;
+					font-weight: bold;
+				}
+				.info {
+					padding: 5px;
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+				}
+				.info-edit {
+					input {
+						width: 90%;
+						border: var(--border);
+						transition: all 0.5s;
+						&:focus {
+							border-color: var(--mainColor);
+						}
+					}
+				}
+			}
+		}
+		.options {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 10px;
+			button {
+				color: var(--mainTextColor);
+				border-radius: 5px;
+				padding: 5px;
+				width: 50%;
+			}
+			button.accept {
+				background-color: var(--acceptColor);
+			}
+			button.cancel {
+				background-color: var(--secondColor);
+			}
+		}
+	}
+}
+
+.change-infos-button {
+	background-color: var(--mainColor);
+	color: var(--mainTextColor);
+	padding: 10px;
+	border-radius: 10px;
+	margin-top: 20px;
+}
+
+.change-password {
+	button {
+		background-color: var(--mainColor);
+		color: var(--mainTextColor);
+		border-radius: 5px;
+		padding: 5px;
+		font-size: 13px;
+		cursor: pointer;
+		&.change-pass {
+			background-color: var(--secondColor);
+		}
+	}
+}
+
+.change-password-model {
+	.content {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		padding: 40px;
+		.close {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			color: var(--secondColor);
+			font-size: 30px;
+			cursor: pointer;
+		}
+		button {
+			color: var(--mainTextColor);
+			border-radius: 5px;
+			width: 100%;
+		}
+		form {
+			margin-top: 30px;
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+
+			> div:not(.show-password):not(.options) {
+				display: flex;
+				flex-direction: column;
+				gap: 5px;
+			}
+
+			.show-password {
+				display: flex;
+				align-items: center;
+				input {
+					cursor: pointer;
+					margin-left: 5px;
+				}
+				label {
+					cursor: pointer;
+				}
+			}
+
+			.options {
+				display: flex;
+				gap: 3px;
+
+				.change {
+					background-color: var(--mainColor);
+				}
+			}
+		}
+		.cancel {
+			background-color: var(--secondColor);
+		}
+	}
+}

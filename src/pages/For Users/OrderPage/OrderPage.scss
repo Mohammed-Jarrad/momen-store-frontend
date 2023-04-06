@@ -1,0 +1,163 @@
+@import "../../../main.scss";
+
+.order-page {
+	padding: 20px;
+	@include mobile {
+		padding: 10px 5px;
+	}
+
+	.order-box {
+		background-color: var(--boxBG);
+		box-shadow: var(--boxShadow);
+		border-radius: 10px;
+		padding: 10px;
+		height: 100%;
+
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		@include mobile {
+			gap: 10px;
+		}
+		> div {
+			background-color: var(--bodyBG);
+			border: var(--border);
+			border-radius: 10px;
+			padding: 5px;
+		}
+
+		.order-location {
+			padding: 10px;
+			display: flex;
+			align-items: stretch;
+			justify-content: space-between;
+			gap: 20px;
+			flex-wrap: wrap;
+			@include mobile {
+				flex-direction: column;
+				gap: 5px;
+				.box {
+					width: 100%;
+					font-size: smaller;
+				}
+			}
+			.box {
+				flex: 1;
+				background-color: var(--boxBG);
+				//
+				box-shadow: var(--boxShadow);
+				color: var(--secondTextColor);
+				padding: 5px;
+				border-radius: 10px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: space-between;
+				// gap: 10px;
+
+				img,
+				svg {
+					width: 40px;
+					height: 40px;
+					border-radius: 50%;
+					color: var(--mainColor);
+				}
+			}
+		}
+
+		.status-control {
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			gap: 10px;
+			border-color: var(--mainColor);
+
+			.status {
+			}
+			.control {
+				width: 200px;
+				.MuiSelect-select {
+					padding-top: 5px;
+					padding-bottom: 5px;
+				}
+			}
+		}
+
+		.order-details {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+			align-items: center;
+			> p {
+				font-weight: bold;
+			}
+			.items {
+				width: 100%;
+				padding: 10px;
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+				gap: 10px;
+				.item {
+					border-radius: 10px;
+					box-shadow: var(--boxShadow);
+					background-color: var(--boxBG);
+					display: flex;
+					flex-direction: column;
+					overflow: hidden;
+					padding: 10px;
+
+					a {
+						height: 200px;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						img {
+							height: 100%;
+							object-fit: cover;
+						}
+					}
+					> div {
+						border-top: 1px solid #ddd;
+						display: flex;
+						justify-content: space-between;
+						padding: 5px 10px;
+						font-size: smaller;
+						&.selected-color,
+						&.selected-size,
+						&.quantity {
+							span:nth-child(2) {
+								width: 25px;
+								height: 25px;
+								border-radius: 50%;
+								display: flex;
+								justify-content: center;
+								align-items: center;
+								// font-weight: bold;
+								font-size: larger;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.order-price {
+			border-color: var(--secondColor);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 20px;
+			@include mobile {
+				justify-content: space-between;
+				font-size: small;
+			}
+		}
+
+		.remove-order {
+			background-color: var(--secondColor);
+			color: var(--mainTextColor);
+			padding: 5px;
+			border-radius: 10px;
+		}
+	}
+}

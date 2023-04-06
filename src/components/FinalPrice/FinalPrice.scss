@@ -1,0 +1,15 @@
+.final-price {
+	display: flex;
+	align-items: center;
+	gap: 5px !important;
+	color: var(--secondTextColor);
+	.origin-with-dis {
+		text-decoration: line-through;
+	}
+	.discount {
+		font-weight: bold;
+	}
+	.origin {
+		font-weight: bold;
+	}
+}
