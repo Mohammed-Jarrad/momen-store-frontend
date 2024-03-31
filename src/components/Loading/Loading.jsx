@@ -6,10 +6,12 @@ export default function Loading({ open, setOpen }) {
 	}
 
 	return (
-		<>
-			<Backdrop sx={{ color: "#fff", zIndex: theme => theme.zIndex.drawer + 1 }} open={open ? true : false} onClick={handleClose}>
-				<CircularProgress color="success" />
-			</Backdrop>
-		</>
+		<Backdrop
+			sx={{ color: "#fff", zIndex: theme => theme.zIndex.drawer + 1 }}
+			open={open ? true : false}
+			onClick={handleClose}
+		>
+			<CircularProgress color="success" />
+		</Backdrop>
 	)
 }
